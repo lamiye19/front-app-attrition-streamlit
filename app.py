@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-from sklearn.preprocessing import StandardScaler  # Si le prétraitement est nécessaire
 import xgboost as xgb  # Importer XGBoost
 
 # Titre de l'application
@@ -73,8 +72,6 @@ if uploaded_file is not None:
 
     # Étape 2 : Prétraitement des données si nécessaire
     st.header("Prétraitement des données")
-    scaler = StandardScaler()
-    data_scaled = scaler.fit_transform(data)
     
     # Supposons que seules certaines colonnes sont nécessaires pour le modèle
     required_columns = ['Customer_Age', 'Dependent_count', 'Months_on_book', 'Total_Relationship_Count', 'Months_Inactive_12_mon', 'Contacts_Count_12_mon', 'Credit_Limit', 'Total_Revolving_Bal', 'Avg_Open_To_Buy', 'Total_Amt_Chng_Q4_Q1', 'Total_Trans_Amt', 'Total_Trans_Ct', 'Total_Ct_Chng_Q4_Q1', 'Avg_Utilization_Ratio', 'Complain', 'Satisfaction Score', 'Point Earned', 'Gender_M', 'Education_Level_Doctorate', 'Education_Level_Graduate', 'Education_Level_High School', 'Education_Level_Post-Graduate', 'Education_Level_Uneducated', 'Education_Level_Unknown', 'Marital_Status_Married', 'Marital_Status_Single', 'Marital_Status_Unknown', 'Income_Category_$40K - $60K', 'Income_Category_$60K - $80K', 'Income_Category_$80K - $120K', 'Income_Category_Less than $40K', 'Income_Category_Unknown', 'Card_Category_Gold', 'Card_Category_Platinum', 'Card_Category_Silver'] 
