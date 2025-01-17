@@ -80,8 +80,8 @@ if uploaded_file is not None:
         data_scaled = data[required_columns]
 
         # Normalisation (si votre modèle a besoin de données normalisées)
-        scaler = StandardScaler()
-        data_scaled = scaler.fit_transform(data_scaled)
+        #scaler = StandardScaler()
+        #data_scaled = scaler.fit_transform(data_scaled)
     else:
         st.error(f"Colonnes manquantes. Assurez-vous que le CSV contient : {required_columns}")
         st.stop()
