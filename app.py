@@ -57,10 +57,10 @@ required_columns = {
 }
 
 # Affichage de la liste des colonnes obligatoires
-st.header("Colonnes obligatoires pour le fichier")
 st.write("Assurez-vous que votre fichier CSV contient les colonnes suivantes avec leurs descriptions :")
-for col, desc in required_columns.items():
-    st.markdown(f"- **{col}** : {desc}")
+column_descriptions = "".join([f"- {col}: {desc}\n" for col, desc in required_columns.items()])
+st.text_area("", column_descriptions, height=300)
+
     
 uploaded_file = st.file_uploader("Choisissez un fichier CSV", type=["csv"])
 
