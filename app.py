@@ -3,7 +3,7 @@ import pandas as pd
 import xgboost as xgb  # Importer XGBoost
 
 # Titre de l'application
-st.title("Prédiction d'Attrition des Clients")
+st.title("Prédiction d'attrition des clients")
 
 model_path = "xgb_model.bin"
 try:
